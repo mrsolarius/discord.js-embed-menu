@@ -182,7 +182,7 @@ export class DiscordEmbedMenu extends EventEmitter {
             let reactionsChanged: boolean;
             this.reactionCollector.on('end', (reactions: Collection<string, MessageReaction>) => {
                 if (!this.isDM) {
-                    if (reactions) {
+                    if (reactions.size > 0) {
                         if (reactionsChanged) {
                             return this.clearReactions();
                         } else if (this.menu) {
